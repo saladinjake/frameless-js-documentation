@@ -51,4 +51,12 @@
     --frame-body-line-height: 1.5;
     --frame-body-color: #212529;
     --frame-body-bg: #ddd;
+
+      --pink: #ec4899;
+        --pink-dark: #db2777;
+        --gray: #6b7280;
+        --gray-light: #f9fafb;
+        --black: #111827;
+        --white: #ffffff;
+        --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }

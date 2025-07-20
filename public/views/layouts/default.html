@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="assets/images/favi.ico" rel="icon" />
+
+<meta name="description" content="High quality premium HTML and React website template and OpenCart themes with multipurpose and responsive Bootstrap templates that empowered the community of 9600 customers around the world.">
+<meta name="author" content="harnishdesign.net">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="../../css/index.css"  />
+<link rel="stylesheet" type="text/css" href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" />
+
+
+</head>
+
  <body class="bg-gray-light text-black">
+  <nav class="flex items-center justify-between px-10 py-6 shadow bg-white relative">
+      <div class="flex items-center space-x-2">
+        <div class="text-xl font-bold text-black flex items-center">
+          <span class="w-5 h-5 bg-pink mr-2"></span>
+          Frameless-JS
+        </div>
+      </div>
+
+      <ul class="nav-links flex items-center space-x-6 text-sm">
+        <li class="text-pink font-medium">Home</li>
+        <li>About</li>
+        <li>Features</li>
+        <li>Team</li>
+        <li>Documentation</li>
+        <li>Contact</li>
+        <li class="dropdown relative">
+          Pages
+          <div class="dropdown-content">
+            <div>Careers</div>
+            <div>Blog</div>
+            <div>Help</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="space-x-4 nav-links">
+        <button class="border px-4 py-2 rounded hover:bg-pink-50">Sign Up</button>
+        <a href="#" class="ml-2 underline">Log in →</a>
+      </div>
+
+      <div id="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <div id="drawer" class="fixed top-0 left-0 h-screen w-screen bg-white drawer z-40 flex flex-col p-10">
+      <button id="menu-toggle" class="self-end text-xl">✕</button>
+      <ul class="space-y-6 mt-10 text-xl">
+        <li>Home</li>
+        <li>About</li>
+        <li>Service</li>
+        <li>Team</li>
+        <li>Pricing</li>
+        <li>Contact</li>
+        <li>Careers</li>
+      </ul>
+    </div>
+
+
+<slot name="hero">
+  <!--hero section-->
+</slot>
+
+     <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.getElementById('menu-toggle');
+        const drawer = document.getElementById('drawer');
+
+        toggle.addEventListener('click', () => {
+          drawer.classList.toggle('open');
+        });
+      });
+    </script>
+</body>
