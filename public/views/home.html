@@ -1,12 +1,56 @@
-<h1>Home Page</h1>
 
-<h4 id="title"></h4>
-<div>
-    <p>Welcome <span id="welcome"></span> to the home page.</p>
-</div>
-    <input data-bind="name" />
-  <p>Hello, <span data-bind-text="name"></span>!</p>
+    <nav class="flex items-center justify-between px-10 py-6 shadow bg-white">
+      <div class="flex items-center space-x-2">
+        <div class="text-xl font-bold text-black flex items-center">
+          <span class="w-5 h-5 bg-pink mr-2"></span>
+          Copper
+        </div>
+      </div>
+      <ul class="flex items-center space-x-6 text-sm">
+        <li class="text-pink font-medium">Home</li>
+        <li>About</li>
+        <li>Service</li>
+        <li>Team</li>
+        <li>Pricing</li>
+        <li>Contact</li>
+        <li>Pages</li>
+      </ul>
+      <div class="space-x-4">
+        <button class="border px-4 py-2 rounded hover:bg-pink-50">Sign Up</button>
+        <a href="#" class="ml-2 underline">Log in →</a>
+      </div>
+    </nav>
 
-  <!--set section-->
-   <slot name="more1"></slot>
-  <slot name="more2"></slot>
+    <section class="relative px-10 py-20 flex flex-col lg:flex-row items-center justify-between">
+      <div class="max-w-xl space-y-6 z-10">
+        <h1 class="text-4xl font-semibold leading-tight">
+          Give Your customers <br />
+          human feeling touch <br />
+          <span class="text-black font-bold">Like Never Before</span>
+        </h1>
+        <p class="text-gray text-sm">
+          Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center gap-3">
+          <input type="email" placeholder="name@email.com" class="border px-4 py-2 rounded w-full sm:w-auto" />
+          <button class="bg-pink text-white px-6 py-2 rounded hover\:bg-pink-dark">Request Demo →</button>
+        </div>
+        <div class="flex items-center justify-center text-gray text-sm mt-4">
+          <span class="px-4">OR</span>
+        </div>
+        <button class="flex items-center justify-center w-full sm:w-auto border px-6 py-2 rounded mt-2">
+          <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google" class="mr-2" />
+          Sign Up With Google
+        </button>
+      </div>
+
+      <div class="relative mt-16 lg:mt-0 lg:w-1/2 w-full">
+        <div class="absolute top-0 left-0 w-64 h-40 bg-white shadow rounded-xl float-y z-20"></div>
+        <div class="absolute top-20 left-16 w-72 h-48 bg-white shadow rounded-xl float-y z-10"></div>
+        <div class="absolute top-40 left-32 w-64 h-36 bg-white shadow rounded-xl float-y z-0"></div>
+
+        <div class="absolute bottom-0 right-0 w-32 h-32 bg-pink rounded-full opacity-40"></div>
+        <div class="absolute top-10 right-10 w-5 h-5 bg-pink rounded-full"></div>
+        <div class="absolute bottom-16 left-0 w-20 h-20 bg-yellow rounded-full opacity-60"></div>
+      </div>
+    </section>
