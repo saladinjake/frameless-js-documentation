@@ -11,6 +11,11 @@ export function init({ props = {} }) {
     image: 'https://placekitten.com/200/200',
   });
 
+  // for those still learning js
+
+
+
+
   return {
     store,
     template: `
@@ -49,9 +54,20 @@ export function init({ props = {} }) {
     `,
     onMount(option) {
       console.log('[home.js] Mounted', option);
+
     },
     onDestroy() {
       console.log('[home.js] Destroyed');
     },
+
+    toggleMenu({element, dataset}) {
+      //const toggle = document.getElementById('menu-toggle');
+      const drawer = document.getElementById('drawer');
+
+
+      drawer.classList.toggle('open');
+      alert("ttt")
+
+    }
   };
 }

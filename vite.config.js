@@ -1,57 +1,62 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import eslint from 'vite-plugin-eslint';
+import fsp from 'fs/promises';
 
-import fsp from "fs/promises"
+// Match .html files
+const htmlFileRegex = /\.html$/;
 
-const htmlFileRegex =/\.html$/
-const postFixRe = /[?#].*$/s;
-const postFix ="?.html-import";
+// Correct lowercase postfix (fixed)
+const postfix = '?.html-import';
+const postfixRe = /[?#].*$/s;
 
-function cleanUrl(url){
-  return url.replace(postFixRe,'')
+// Cleans up postfix from file path
+function cleanUrl(url) {
+  return url.replace(postfixRe, '');
 }
 
-const htmlImportBuild  = () => ({
-  name:"html-import:build",
-  enforce:"pre",
-  apply:"build",
-  async resolve(id, importer, options){
-    if(htmlFileRegex.test(id) && !options){
+// Plugin to handle HTML imports during build
+const htmlImportBuild = () => ({
+  name: 'html-import:build',
+  enforce: 'pre',
+  apply: 'build',
+
+  async resolve(id, importer, options) {
+    if (htmlFileRegex.test(id) && !options) {
       let res = await this.resolve(id, importer, {
         skipSelf: true,
         ...options
-      })
+      });
 
-      if(!res || res.external) return  res
-      return res.id + postfix
+      if (!res || res.external) return res;
+      return res.id + postfix; // ✅ now using defined lowercase variable
     }
-
-
   },
 
-  async load(id){
-    if(!id.endsWith(postfix)) return;
-    let htmlContent = await fsp.readFile(cleanUrl(id))
+  async load(id) {
+    if (!id.endsWith(postfix)) return;
 
-    // do stuff with html file content buffer
+    let htmlContent = await fsp.readFile(cleanUrl(id));
 
-    return `export default ${JSON.stringify(htmlContent.toString('utf-8'))}`
+    // Return HTML as JS module string
+    return `export default ${JSON.stringify(htmlContent.toString('utf-8'))}`;
   }
-})
+});
 
-function htmlImportServe(){
+// Plugin for HTML imports during dev server
+function htmlImportServe() {
   return {
-    name:"html-import:serve",
-    apply: "serve",
-    transform(src,id){
-      if(htmlFileRegex.test(id)){
+    name: 'html-import:serve',
+    apply: 'serve',
+
+    transform(src, id) {
+      if (htmlFileRegex.test(id)) {
         return {
           code: `export default ${JSON.stringify(src)}`
-        }
+        };
       }
     }
-  }
+  };
 }
 
 export default defineConfig({
@@ -67,7 +72,6 @@ export default defineConfig({
         manualChunks(id) {
           if (id.includes('node_modules')) {
             const modulePath = id.split('node_modules/')[1];
-
             const topLevelFolder = modulePath?.split('/')[0];
 
             if (!topLevelFolder) {
@@ -91,7 +95,7 @@ export default defineConfig({
       cache: false,
       fix: true,
     }),
-   htmlImportBuild(),
-   htmlImportServe()
+    htmlImportBuild(),  // fixed plugin
+    htmlImportServe(),  // dev-time plugin
   ],
 });

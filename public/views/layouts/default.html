@@ -47,11 +47,11 @@
       </ul>
 
       <div class="space-x-4 nav-links">
-        <button class="border px-4 py-2 rounded hover:bg-pink-50">Sign Up</button>
+        <button class="border px-4 py-2 rounded hover:bg-pink-50">Sponsors - Sign Up</button>
         <a href="#" class="ml-2 underline">Log in →</a>
       </div>
 
-      <div id="menu-toggle" class="hamburger">
+      <div id="menu-toggle" class="hamburger" data-action="toggleMenu">
         <span></span>
         <span></span>
         <span></span>
@@ -76,14 +76,9 @@
   <!--hero section-->
 </slot>
 
-     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const toggle = document.getElementById('menu-toggle');
-        const drawer = document.getElementById('drawer');
+<slot name="section2">
+  <!--hero section-->
+</slot>
 
-        toggle.addEventListener('click', () => {
-          drawer.classList.toggle('open');
-        });
-      });
-    </script>
+    
 </body>

@@ -1,50 +1,120 @@
 
-<!-- <div slot="hero">    
+<div slot="hero">    
+   <div class="container">
     
-    <section class="relative px-10 py-20 flex flex-col lg:flex-row items-center justify-between">
-      <div class="max-w-xl space-y-6 z-10">
-        <h1 class="text-4xl font-semibold leading-tight">
-          Give Your customers <br />
-          human feeling touch <br />
-          <span class="text-black font-bold">Like Never Before</span>
-        </h1>
-        <p class="text-gray text-sm">
-          Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.
-        </p>
-        <div class="flex flex-col sm:flex-row items-center gap-3">
-          <input type="email" placeholder="name@email.com" class="border px-4 py-2 rounded w-full sm:w-auto" />
-          <button class="bg-pink text-white px-6 py-2 rounded hover\:bg-pink-dark">Request Demo →</button>
+      <!-- Animated Bubble Circles -->
+<div class="absolute w-10 h-10 bg-pink-400 bg-pink opacity-70 rounded-full animate-ripple" style="top: 10%; left: 15%;z-index:999 "></div>
+<div class="absolute w-16 h-16 bg-red-300 bg-pink opacity-60 rounded-full animate-ripple delay-200" style="top: 25%; right: 10%; "></div>
+<div class="absolute w-12 h-12 bg-yellow-300 bg-pink opacity-50 rounded-full animate-ripple delay-400" style="bottom: 10%; left: 25%; "></div>
+<div class="absolute w-8 h-8 bg-blue-300 bg-pink opacity-50 rounded-full animate-ripple delay-600" style="bottom: 8%; right: 20%; "></div>
+
+      <section class="hero">
+        <div class="hero-text">
+          <h1 class="text-5xl font-bold text-pink">
+           Frameless -JS
+          </h1>
+          <h1 class="text-5xl font-bold text-black">
+            Un-opinionated go-to<br /> javascript framework
+          </h1>
+          <p class="text-lg text-gray" style="margin: 1rem 0">
+            Everything you need to engage,scale & build modern web powered pages.
+          </p>
+          <form class="flex" style="flex-wrap: wrap; gap: 1rem">
+            <input class="input" type="email" placeholder="Enter your email" />
+            <button class="btn bg-pink">Get Updates</button>
+          </form>
+          <div class="divider">OR</div>
+          <button class="google-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" />
+           Become a sponsor.  Sign up with Google
+          </button>
+          <p class="text-gray" style="margin-top: 1rem">
+            No credit card required. 
+          </p>
         </div>
-        <div class="flex items-center justify-center text-gray text-sm mt-4">
-          <span class="px-4">OR</span>
+
+        <div class="hero-images">
+          <div class="card card-1"></div>
+          <div class="card card-2"></div>
+          <div class="card card-3"></div>
         </div>
-        <button class="flex items-center justify-center w-full sm:w-auto border px-6 py-2 rounded mt-2">
-          <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google" class="mr-2" />
-          Sign Up With Google
-        </button>
+      </section>
+
+    </div>
+
+
+
+    
+    
+</div>
+
+
+
+<div slot="section2">
+   <!-- Logos Backers Section -->
+  <section class="section bg-white">
+    <div class="container overflow-hidden">
+      <div class="logo-track">
+        <img src="https://dummyimage.com/150x40/ddd/777&text=HubSpot" alt="HubSpot" />
+        <img src="https://dummyimage.com/150x40/ddd/777&text=Tumblr" alt="Tumblr" />
+        <img src="https://dummyimage.com/150x40/ddd/777&text=Microsoft" alt="Microsoft" />
+        <img src="https://dummyimage.com/150x40/ddd/777&text=Tinder" alt="Tinder" />
+        <img src="https://dummyimage.com/150x40/ddd/777&text=Facebook" alt="Facebook" />
+        <img src="https://dummyimage.com/150x40/ddd/777&text=Dropbox" alt="Dropbox" />
+        <!-- repeated for smooth loop -->
+        <img src="https://dummyimage.com/150x40/ddd/777&text=HubSpot" alt="HubSpot" />
+        <img src="https://dummyimage.com/150x40/ddd/777&text=Tumblr" alt="Tumblr" />
+        <img src="https://dummyimage.com/150x40/ddd/777&text=Microsoft" alt="Microsoft" />
+        <img src="https://dummyimage.com/150x40/ddd/777&text=Tinder" alt="Tinder" />
+        <img src="https://dummyimage.com/150x40/ddd/777&text=Facebook" alt="Facebook" />
+        <img src="https://dummyimage.com/150x40/ddd/777&text=Dropbox" alt="Dropbox" />
       </div>
+    </div>
+  </section>
 
-      <div class="relative mt-16 lg:mt-0 lg:w-1/2 w-full">
-        <div class="absolute top-0 left-0 w-64 h-40 bg-white shadow rounded-xl float-y z-20"></div>
-        <div class="absolute top-20 left-16 w-72 h-48 bg-white shadow rounded-xl float-y z-10"></div>
-        <div class="absolute top-40 left-32 w-64 h-36 bg-white shadow rounded-xl float-y z-0"></div>
+  <!-- How It Works Section -->
+  <section class="section">
+    <div class="container text-center items-center">
+      <h2 class="" style="font-size:2rem; font-weight:300; margin-bottom:1rem; margin:0 auto 2rem;">
+        How <span style="font-weight:700;">It Works</span>
+      </h2>
+      <p style="max-width:600px; margin:0 auto 2rem; color:#6b7280;">
+        Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.
+      </p>
 
-        <div class="absolute bottom-0 right-0 w-32 h-32 bg-pink rounded-full opacity-40"></div>
-        <div class="absolute top-10 right-10 w-5 h-5 bg-pink rounded-full"></div>
-        <div class="absolute bottom-16 left-0 w-20 h-20 bg-yellow rounded-full opacity-60"></div>
+      <div class="steps">
+        <div class="step active">
+          <div class="step-circle active">
+            <div class="ping"></div>
+            <div class="step-dot active"></div>
+          </div>
+          <div class="step-label active">Install Node js</div>
+        </div>
+        <div class="step">
+          <div class="step-circle">
+            <div class="step-dot"></div>
+          </div>
+          <div class="step-label">Install frameless-js</div>
+        </div>
+        <div class="step">
+          <div class="step-circle">
+            <div class="step-dot"></div>
+          </div>
+          <div class="step-label">Add plugins to your code editor</div>
+        </div>
+        <div class="step">
+          <div class="step-circle">
+            <div class="step-dot"></div>
+          </div>
+          <div class="step-label">Build something awesome</div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-</div> -->
+</div>
 
+ <script>
 
- <script type="text/javascript">
-      document.addEventListener('DOMContentLoaded', () => {
-        const toggle = document.getElementById('menu-toggle');
-        const drawer = document.getElementById('drawer');
-
-        toggle.addEventListener('click', () => {
-          drawer.classList.toggle('open');
-        });
-      });
+    
     </script>
